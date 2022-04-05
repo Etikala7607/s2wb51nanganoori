@@ -5,7 +5,7 @@ block content
   div(class="container-fluid")
         div(class="row")
             -
-                let results = [
+                var results = [
                     {
                         "name":"VisualStudio",
                         "version":"1.2.1",
@@ -17,17 +17,17 @@ block content
                         "cost":"$230"
                     },
                     {
-                        "name":"Node",
+                        "name":"NodeJS",
                         "version":"3.4",
                         "cost":"$200"
                     }
                 ]
             each i,index in results 
-                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.name}  
-                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.version}
-                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.cost}
+                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.name}  
+                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.version}
+                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.cost}
   script.
-    function retrieve(p)
+    function buy(p)
     {
-        alert(`You have searched for an item ${p+1}`);
+        alert(`You have purchased an item ${p+1}`);
     }
