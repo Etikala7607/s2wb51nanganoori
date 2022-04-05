@@ -2,4 +2,32 @@ extends layout
 
 block content
   h1= title
-  p Welcome to Mahesh Kumar's #{title}
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let results = [
+                    {
+                        "name":"VisualStudio",
+                        "version":"1.2.1",
+                        "cost":"$450"
+                    },
+                    {
+                        "name":"SQL Server",
+                        "version":"2.3.4",
+                        "cost":"$230"
+                    },
+                    {
+                        "name":"Node",
+                        "version":"3.4",
+                        "cost":"$200"
+                    }
+                ]
+            each i,index in results 
+                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.name}  
+                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.version}
+                div(class="col-sm-2" onclick=`retrieve(${index})`)  #{i.cost}
+  script.
+    function retrieve(p)
+    {
+        alert(`You have searched for an item ${p+1}`);
+    }

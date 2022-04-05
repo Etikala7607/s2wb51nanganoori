@@ -2,4 +2,4 @@
 Express 
 [HerokuAppServerLink](https://s2wb51nanganoori.herokuapp.com/)
 
-class tools: name(string),version(number),cost(number)
+class tools: name(string),version(string),cost(string)
