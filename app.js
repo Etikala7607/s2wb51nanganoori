@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var toolsRouter = require('./routes/tools');
+var addmodsRouter = require('./routes/addmods');
 
 var app = express();
 
@@ -14,6 +15,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use('/addmods',addmodsRouter);
 app.use('/tools',toolsRouter);
 app.use(logger('dev'));
 app.use(express.json());
